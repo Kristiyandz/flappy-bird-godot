@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://5gqbrvmkew36"]
+
+[ext_resource type="Script" uid="uid://buo3jnyqijkka" path="res://scripts/event_emitter_area.gd" id="1_y0pdx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_064xa"]
+size = Vector2(4, 107)
+
+[node name="EventEmitterArea" type="Area2D"]
+script = ExtResource("1_y0pdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_064xa")
+debug_color = Color(0.880527, 0.163843, 0.725421, 0.42)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+polygon = PackedVector2Array(-2, -54, 2, -54, 2, 54, -2, 54)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

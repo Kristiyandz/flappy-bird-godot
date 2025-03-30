@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://xv82v40dmbsa"]
+
+[ext_resource type="PackedScene" uid="uid://bhgcn73wnbuvu" path="res://scenes/ground.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://ci2m4b4n77a3c" path="res://scenes/event_emitter.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://5gqbrvmkew36" path="res://scenes/event_emitter_area.tscn" id="3_4wyf3"]
+
+[node name="World" type="Node2D"]
+
+[node name="EventEmitter" parent="." instance=ExtResource("2_rwgxs")]
+visible = false
+position = Vector2(20, 143)
+
+[node name="EventEmitterArea" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-21, 109)
+
+[node name="Ground" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(0, 127)
